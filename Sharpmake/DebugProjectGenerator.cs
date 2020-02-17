@@ -238,6 +238,7 @@ namespace Sharpmake
             string quote = Util.IsRunningInMono() ? @"\""" : @""""; // When running in Mono, we must escape "
             conf.CsprojUserFile.StartArguments = $@"/sources(@{quote}{string.Join(";", MainSources)}{quote}) {startArguments}";
             conf.CsprojUserFile.StartProgram = s_sharpmakeApplicationExePath;
+            conf.CsprojUserFile.WorkingDirectory = RootPath;
         }
     }
 
